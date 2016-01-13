@@ -1,0 +1,22 @@
+apply plugin: 'java'
+
+sourceSets {
+    main {
+        java {
+            srcDir 'exercises'
+        }
+    }
+}
+
+dependencies {
+    compile project(':algs4')
+    runtime project(':algs4')
+}
+
+task run(type:JavaExec) {
+    if (project.hasProperty('mainClass')) {
+        main = project.property('mainClass')
+        classpath = sourceSets.main.runtimeClasspath
+    }
+    onlyIf = { project.hasProperty('mainClass') }
+}
