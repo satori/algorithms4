@@ -8,15 +8,33 @@ sourceSets {
     }
 }
 
+ext {
+    wrapper = file('run.sh')
+}
+
 dependencies {
     compile project(':algs4')
     runtime project(':algs4')
 }
 
-task run(type:JavaExec) {
-    if (project.hasProperty('mainClass')) {
-        main = project.property('mainClass')
-        classpath = sourceSets.main.runtimeClasspath
+build {
+    inputs.files sourceSets.main.runtimeClasspath
+    outputs.file wrapper
+}
+
+build << {
+    wrapper.withPrintWriter {
+        it.println '#!/bin/sh'
+        it.println "java -cp ${getRuntimeClasspath()} \$@"
     }
-    onlyIf = { project.hasProperty('mainClass') }
+    wrapper.setExecutable(true)
+}
+
+clean {
+    inputs.file wrapper
+    delete wrapper
+}
+
+String getRuntimeClasspath() {
+    sourceSets.main.runtimeClasspath.collect { it.absolutePath }.join(':')
 }
