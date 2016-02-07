@@ -19,8 +19,7 @@ public class Ex_1_1_20
 {
     private static double logFact(int N)
     {
-        if (N == 1)
-            return 0.0;
+        if (N == 1) return 0.0;
 
         return Math.log(N) + logFact(N - 1);
     }
