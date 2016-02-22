@@ -26,21 +26,21 @@ public class Ex_1_1_11
             {true, false, false, true},
         };
 
-        String header = "  ";
+        StringBuffer header = new StringBuffer("  ");
 
         for (int i = 0; i < values[0].length; i++)
-            header += " " + i;
+            header.append(" " + i);
 
         StdOut.println(header);
 
         for (int i = 0; i < values.length; i++)
         {
-            String line = "";
+            StringBuffer buf = new StringBuffer();
 
             for (int j = 0; j < values[i].length; j++)
-                line += " " + (values[i][j] ? "*" : " ");
+                buf.append(" " + (values[i][j] ? "*" : " "));
 
-            StdOut.printf("%d %s\n", i, line);
+            StdOut.printf("%d %s\n", i, buf);
         }
     }
 }
