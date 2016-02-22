@@ -47,7 +47,7 @@ public class Ex_1_1_15
         for (int i = 0; i < N; i++)
         {
             uniform[i] = StdRandom.uniform(M);
-            gaussian[i] = (int)(StdRandom.gaussian(M/2, 1.0));
+            gaussian[i] = (int)(StdRandom.gaussian(M/(double)2, 1.0));
         }
 
         printArray("uniform", histogram(uniform, M));
