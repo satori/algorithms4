@@ -33,7 +33,7 @@ build {
     outputs.file wrapper
 }
 
-build << {
+build.doLast {
     wrapper.withPrintWriter {
         it.println '#!/bin/sh'
         it.println "java -cp ${getRuntimeClasspath()} \$@"
