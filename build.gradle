@@ -1,5 +1,6 @@
 apply plugin: 'java'
 apply plugin: 'findbugs'
+apply plugin: 'checkstyle'
 
 sourceSets {
     main {
@@ -10,6 +11,13 @@ sourceSets {
 }
 
 tasks.withType(FindBugs) {
+    reports {
+        xml.enabled = false
+        html.enabled = true
+    }
+}
+
+tasks.withType(Checkstyle) {
     reports {
         xml.enabled = false
         html.enabled = true
