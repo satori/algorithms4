@@ -44,7 +44,7 @@ build {
 build.doLast {
     wrapper.withPrintWriter {
         it.println '#!/bin/sh'
-        it.println "java -cp ${getRuntimeClasspath()} \$@"
+        it.println "time java -cp ${getRuntimeClasspath()} \$@"
     }
     wrapper.setExecutable(true)
 }
