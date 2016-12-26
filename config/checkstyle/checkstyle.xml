@@ -36,20 +36,6 @@
         <property name="tabWidth" value="4"/>
 
         <!-- =========================================================================== -->
-        <!-- Check for annotations                                                       -->
-        <!-- http://checkstyle.sourceforge.net/config_annotation.html                    -->
-        <!-- =========================================================================== -->
-
-<!--
-        <module name="AnnotationUseStyle"/>
-        <module name="MissingDeprecated"/>
-        <module name="MissingOverride"/>
-        <module name="PackageAnnotation"/>
-        <module name="SuppressWarningsHolder"/>
-        <module name="AnnotationLocation"/>
--->
-
-        <!-- =========================================================================== -->
         <!-- Block checks                                                                -->
         <!-- http://checkstyle.sourceforge.net/config_blocks.html                        -->
         <!-- =========================================================================== -->
@@ -90,13 +76,6 @@
             <message key="one.top.level.class" value="The .java file must have exactly one top-level class."/>
         </module>
 
-<!--
-        <module name="FinalClass"/>
-        <module name="HideUtilityClassConstructor"/>
-        <module name="DesignForExtension"/>
-        <module name="InnerTypeLast"/>
--->
-
         <!-- =========================================================================== -->
         <!-- Coding violations                                                           -->
         <!-- http://checkstyle.sourceforge.net/config_coding.html                        -->
@@ -129,13 +108,6 @@
             <property name="tokens" value="BXOR, BXOR_ASSIGN"/>
             <message key="illegal.token" value="Did you mean to use ''Math.pow()'' instead of the bitwise XOR operator (''^'') ?"/>
         </module>
-
-<!--  triggers too many warnings
-        <module name="IllegalToken">
-            <property name="tokens" value="TYPECAST"/>
-            <message key="illegal.token" value="Avoid typecasts whenever possible."/>
-        </module>
--->
 
         <module name="InnerAssignment"/>
         <module name="ModifiedControlVariable">
@@ -219,15 +191,8 @@
             <message key="declaration.order.static" value="Static variable definition in wrong order. The preferred order is [static variables, instance variables, constructors, methods]."/>
         </module>
 
-<!--
-        <module name="ParameterAssignment">
-            <message key="parameter.assignment" value="Assignment of parameter ''{0}'' is not allowed. Instead, define a local variable."/>
-        </module>
--->
-
         <module name="DefaultComesLast"/>
         <module name="FallThrough"/>
-        <module name="OneStatementPerLine"/>
 
         <module name="IllegalTokenText">
             <property name="tokens" value="NUM_FLOAT, NUM_DOUBLE"/>
@@ -241,32 +206,6 @@
             <property name="ignoreCase" value="true"/>
             <message key="illegal.token.text" value="A leading 0 in an integer literal signifies that it is an octal (base-8) integer."/>
         </module>
-
-<!--
-        <module name="UnnecessaryParentheses"/>
-        <module name="ArrayTrailingComma"/>
-        <module name="EqualsAvoidsNull"/>
-        <module name="EqualsHashCode"/>    findbugs catches this already
-        <module name="FinalLocalVariable"/>
-        <module name="IllegalInstantiation"/>
-        <module name="PackageDeclaration"/>
-        <module name="ReturnCount"/>
-        <module name="ExplicitInitialization"/>
-        <module name="MissingCtor"/>
-        <module name="MultipleStringLiterals"/>
-        <module name="MultipleVariableDeclarations"/>
-        <module name="RequireThis"/>
-        <module name="VariableDeclarationUsageDistance"/>
-        <module name="OverloadMethodsDeclarationOrder"/>
-        <module name="MagicNumber">
-            <property name="tokens" value="NUM_DOUBLE, NUM_FLOAT, NUM_INT, NUM_LONG"/>
-            <property name="ignoreNumbers" value="-256, -128, -100, -64, -32, -16, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1, -0.5, -0.25, 0, 0.25, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 16, 32, 64, 100, 128, 256, 512, 1024, 32768"/>
-            <message key="magic.number" value="''{0}'' looks like a hard-coded value. This should be made a constant variable with a symbolic name (such as AVOGADROS_NUMBER)."/>
-        </module>
-        <module name="MissingSwitchDefault">
-            <message key="missing.switch.default" value="A switch statement must contain a ''default'' clause."/>
-        </module>
--->
 
         <!-- =========================================================================== -->
         <!-- Headers                                                                     -->
@@ -302,47 +241,6 @@
             <message key="import.avoidStar" value="Do not use .* in import statements."/>
         </module>
 
-<!--
-
-        <module name="ImportOrder"/>
-        <module name="ImportControl"/>
-        <module name="CustomImportOrder"/>
--->
-
-        <!-- =========================================================================== -->
-        <!-- Javadoc comments                                                            -->
-        <!-- http://checkstyle.sourceforge.net/config_javadoc.html                       -->
-        <!-- =========================================================================== -->
-
-<!--    Running time increases substantially with Javadoc checks -->
-<!--
-        <module name="JavadocStyle"/>
-        <module name="NonEmptyAtclauseDescription"/>
-        <module name="AtclauseOrder"/>
-        <module name="JavadocPackage"/>
-        <module name="JavadocType"/>
-        <module name="JavadocMethod"/>
-        <module name="JavadocVariable"/>
-        <module name="WriteTag"/>
-        <module name="SummaryJavadoc"/>
-        <module name="JavadocParagraph"/>
-        <module name="SingleLineJavadoc"/>
--->
-
-        <!-- =========================================================================== -->
-        <!-- Metrics                                                                     -->
-        <!-- http://checkstyle.sourceforge.net/config_metrics.html                       -->
-        <!-- =========================================================================== -->
-
-<!--
-        <module name="BooleanExpressionComplexity"/>
-        <module name="ClassDataAbstractionCoupling"/>
-        <module name="ClassFanOutComplexity"/>
-        <module name="CyclomaticComplexity"/>
-        <module name="NPathComplexity"/>
-        <module name="JavaNCSS"/>
--->
-
         <!-- =========================================================================== -->
         <!-- Miscellaneous checks                                                        -->
         <!-- http://checkstyle.sourceforge.net/config_misc.html                          -->
@@ -360,14 +258,6 @@
         <module name="OuterTypeFilename">
             <message key="type.file.mismatch" value="The name of the outer type and the file do not match. For example, the class Point must be in a file named Point.java."/>
         </module>
-
-<!--
-        <module name="UncommentedMain"/>
-        <module name="FinalParameters"/>
-        <module name="Indentation"/>
-        <module name="TrailingComment"/>
-        <module name="AvoidEscapedUnicodeCharacters"/>
--->
 
         <module name="DescendantToken">
             <property name="tokens" value="LITERAL_ASSERT"/>
@@ -539,40 +429,6 @@
                    TYPE_EXTENSION_AND, WILDCARD_TYPE"/>
         </module>
 
-        <!-- seems buggy if used with class in default package. seems to need VARIABLE_DEF for it to behave properly? -->
-<!--
-        <module name="EmptyLineSeparator">
-            <property name="tokens" value="CTOR_DEF, VARIABLE_DEF"/>
-            <property name="allowNoEmptyLineBetweenFields" value="true"/>
-            <message key="empty.line.separator" value="Constructor must be separated from previous statement with a blank line."/>
-        </module>
-        <module name="EmptyLineSeparator">
-            <property name="tokens" value="METHOD_DEF, VARIABLE_DEF"/>
-            <property name="allowNoEmptyLineBetweenFields" value="true"/>
-            <message key="empty.line.separator" value="Method must be separated from previous statement with a blank line."/>
-        </module>
-        <module name="EmptyLineSeparator">
-            <property name="tokens" value="CLASS_DEF, VARIABLE_DEF"/>
-            <property name="allowNoEmptyLineBetweenFields" value="true"/>
-            <message key="empty.line.separator" value="Class definition must be separated from previous statement or header with a blank line."/>
-        </module>
-
-        <module name="EmptyLineSeparator">
-            <property name="tokens" value="IMPORT, INTERFACE_DEF, VARIABLE_DEF, METHOD_DEF, PACKAGE_DEF, CTOR_DEF, STATIC_INIT, INSTANCE_INIT"/>
-            <property name="allowNoEmptyLineBetweenFields" value="true"/>
-            <message key="empty.line.separator" value="''{0}'' must be separated from previous statement with a blank line."/>
-        </module>
--->
-
-<!--
-        <module name="OperatorWrap">
-            <property name="option" value="eol"/>
-            <message key="line.previous" value="''{0}'' must be at the end of the previous line."/>
-        </module>
-        <module name="NoLineWrap"/>
-        <module name="SeparatorWrap"/>
--->
-
         <!-- =========================================================================== -->
         <!-- COURSE SPECIFIC CHECKS                                                      -->
         <!-- =========================================================================== -->
@@ -670,7 +526,6 @@
             <property name="ignoreComments" value="true"/>
             <property name="message" value="Do not call ''Math.random()'' in this course. Instead, use an appropriate method from ''StdRandom'', such as ''StdRandom.uniform()''."/>
         </module>
-
 
     </module>
 </module>
