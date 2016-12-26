@@ -25,7 +25,7 @@ public class Ex_1_1_16
 
     public static void main(String[] args)
     {
-        assert exR1(6) == "311361142246";
+        assert exR1(6).equals("311361142246");
         StdOut.printf("exR1(6) = %s\n", exR1(6));
     }
 }

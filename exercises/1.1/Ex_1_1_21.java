@@ -27,7 +27,7 @@ public class Ex_1_1_21
             int n1 = StdIn.readInt();
             int n2 = StdIn.readInt();
 
-            StdOut.printf("%s %d %d %.3f\n", name, n1, n2, (double)n1 / (double)n2);
+            StdOut.printf("%s %d %d %.3f\n", name, n1, n2, (double) n1 / (double) n2);
         }
     }
 }
