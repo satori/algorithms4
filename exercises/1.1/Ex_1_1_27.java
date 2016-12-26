@@ -24,7 +24,7 @@ public class Ex_1_1_27
         if ((N == 0) && (k == 0)) return 1.0;
         if ((N  < 0) || (k  < 0)) return 0.0;
 
-        if (cached[N][k] == 0.0) {
+        if (cached[N][k] == -1) {
             cached[N][k] = (1 - p) * binomial(N - 1, k, p) + p * binomial(N - 1, k - 1, p);
         }
 
@@ -34,6 +34,10 @@ public class Ex_1_1_27
     public static void main(String[] args)
     {
         cached = new double[101][51];
+        for (int i = 0; i < cached.length; i++)
+            for (int j = 0; j < cached[i].length; j++)
+                cached[i][j] = -1;
+
         StdOut.printf("binomial(100, 50, 0.25) = %f\n", binomial(100, 50, 0.25));
     }
 }
