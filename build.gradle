@@ -54,7 +54,6 @@ build.doLast {
 }
 
 clean {
-    inputs.file wrapper
     delete wrapper
 }
 
