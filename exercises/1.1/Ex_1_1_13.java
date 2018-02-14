@@ -1,4 +1,4 @@
-// Copyright (C) 2016  Maxim Bublis
+// Copyright (C) 2016, 2018  Maxim Bublis
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -14,6 +14,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import edu.princeton.cs.algs4.StdOut;
+import java.util.Arrays;
 
 public class Ex_1_1_13
 {
@@ -22,9 +23,7 @@ public class Ex_1_1_13
     {
         for (int i = 0; i < values.length; i++)
         {
-            for (int j = 0; j < values[i].length; j++)
-                StdOut.printf("%3d", values[i][j]);
-            StdOut.printf("\n");
+            StdOut.printf("%s\n", Arrays.toString(values[i]));
         }
     }
 
