@@ -1,4 +1,4 @@
-// Copyright (C) 2016  Maxim Bublis
+// Copyright (C) 2016, 2018  Maxim Bublis
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -33,11 +33,15 @@ public class Ex_1_1_27
 
     public static void main(String[] args)
     {
-        cached = new double[101][51];
+        int N = 100;
+        int k = 50;
+        double p = 0.25;
+
+        cached = new double[N + 1][k + 1];
         for (int i = 0; i < cached.length; i++)
             for (int j = 0; j < cached[i].length; j++)
                 cached[i][j] = -1;
 
-        StdOut.printf("binomial(100, 50, 0.25) = %f\n", binomial(100, 50, 0.25));
+        StdOut.printf("binomial(%d, %d, %f) = %f\n", N, k, p, binomial(N, k, p));
     }
 }
