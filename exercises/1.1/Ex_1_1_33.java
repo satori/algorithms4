@@ -1,4 +1,4 @@
-// Copyright (C) 2017  Maxim Bublis
+// Copyright (C) 2017, 2018  Maxim Bublis
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -14,6 +14,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import edu.princeton.cs.algs4.StdOut;
+import java.util.Arrays;
 
 public class Ex_1_1_33
 {
@@ -98,9 +99,7 @@ public class Ex_1_1_33
 
     private static void printVector(double[] v)
     {
-        for (int i = 0; i < v.length; i++)
-            StdOut.printf("%-7.2f", v[i]);
-        StdOut.printf("\n\n");
+        StdOut.printf("%s\n", Arrays.toString(v));
     }
 
     public static void main(String[] args)
@@ -108,7 +107,7 @@ public class Ex_1_1_33
         double[] x = {1, 2, 3};
         double[] y = {4, -5, 6};
 
-        StdOut.printf("Dot product: %.2f\n\n", Matrix.dot(x, y));
+        StdOut.printf("Dot product: %.2f\n", Matrix.dot(x, y));
 
         double[][] a = {
             {0, 4, -2},
